@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Container Styles */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Form Styles */
+.forms-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.divider {
+    width: 1px;
+    background-color: #ddd;
+    height: 100%;
+    margin: 0 20px; /* Add margin to the divider */
+}
+
+form {
+    background-color: #fff;
+    padding: 30px;
+    flex: 1; /* Make forms fill the flex container */
+}
+
+form h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.2);
+}
+
+button {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #219653;
+}
+
+/* Message Styles */
+.error-message, .message {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    margin-top: 10px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: 500;
+}
+
+.message {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: 500;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
