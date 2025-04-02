@@ -6,6 +6,7 @@ include_once 'config.php';
 include_once 'message.php';
 
 $conn = create_connection($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
+$exceed = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['login'])) {
@@ -54,7 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         update_user_usage($conn, $username, $new_session_usage, $new_traffic_usage, 0);
 
         if ($new_session_usage > $session_limit || $new_traffic_usage > $traffic_limit) {
-            echo_error_message("You've been exceeding your usage limits! Please logout.");
+            echo_error_message("You've been exceeding your usage limits! $new_session_usage/$session_limit, $new_traffic_usage/$traffic_limit");
+            // log user out
+            update_user_usage($conn, $username, 0, 0, 0);
+            session_unset();
         }
     }
 
