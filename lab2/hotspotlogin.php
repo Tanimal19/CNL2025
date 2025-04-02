@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         update_user_usage($conn, $username, $new_session_usage, $new_traffic_usage, 0);
 
         if ($new_session_usage > $session_limit || $new_traffic_usage > $traffic_limit) {
-            echo_error_message("You've been exceeding your usage limits! $new_session_usage/$session_limit, $new_traffic_usage/$traffic_limit");
+            echo_error_message("You've been exceeding your usage limits! session: $new_session_usage s, traffic: $new_traffic_usage mb");
             // log user out
             update_user_usage($conn, $username, 0, 0, 0);
             session_unset();
